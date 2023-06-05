@@ -1,0 +1,73 @@
+﻿@model RescueBus.Models.ViewModel 
+@{
+    ViewBag.Title = "Booking";
+}
+<head>
+    <!--bootstrap links-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--font awesome link for logos-->
+    <script src="https://kit.fontawesome.com/77df986381.js" crossorigin="anonymous"></script>
+
+    <style>
+        #main {
+            margin: auto;
+            width: 50%;
+            border-radius: 1px;
+            padding: 10px;
+        }
+
+        body {
+            padding: 10px;
+            height: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Booking</h2>
+    <div id="main">
+        <form class="form-control">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Daisy Deeks" />
+            <label for="phone" class="form-label">Phone</label>
+            <input type="tel" id="number" name="phone" class="form-control" placeholder="+27 12 345 6789" />
+            <label for="date" class="form-label">Pick-Up Time</label>
+            <input type="datetime" name="date" id="date" class="form-control" />
+            <label for="reason" class="form-label">Reason</label>
+
+            <div class="dropdown">
+                <button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown">
+                    Accident
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item">Death</li>
+                    <li class="dropdown-item">Minor Accident</li>
+                    <li class="dropdown-item">Labour</li>
+                    <li class="dropdown-item">Psychptic Breaks</li>
+                </ul>
+            </div>
+
+            <label for="vehicle">Vehicle</label>
+            @Html.DropDownListFor(model => model.SelectedVehicle,
+               new SelectList(Model.Vehicles, "type"),
+               "Type 1",
+               new { @id = "vehicleDropdown", @class = "form-control form-select mb-2 mr-sm-2", @name = "vehicle" })
+
+            <label for="driver">Driver</label>
+            @Html.DropDownListFor(model => model.SelectedDriver,
+               new SelectList(Model.Drivers, "firstName", "lastName"),
+               "Service",
+               new { @id = "driverDropdown", @class = "form-control form-select mb-2 mr-sm-2", @name = "driver" })
+
+            <label for="address">Pick-Up Address</label>
+            <textarea placeholder="Please type your address here" name="address"></textarea>
+
+            <a href="@Url.Content("~/Home/BookingConfirmed")">
+                <button type="button" class="btn btn-primary" id="book">Book Ambulance</button>
+            </a>
+        </form>
+    </div>
+
+</body>

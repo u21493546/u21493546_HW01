@@ -1,0 +1,66 @@
+/*colour scheme #e444b1 */
+
+li {
+    color: #e3b5d4;
+}
+
+body {
+    padding: 10px;
+    background-color: rgba(247, 237, 244, 0.5); 
+}
+
+#cont1 {
+    position: relative;
+    text-align: center;
+    width: 100%;
+    
+}
+
+#cont2 {
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+#sect1 {
+    height: 300px;
+    text-align: center;
+}
+
+#sect2 {
+    height: 300px;
+    text-align: center;
+}
+
+#bookSect {
+    background-color: rgba(134, 19, 98, 0.2);
+    text-align: center;
+    width: 70%;
+    /*margin: auto;*/
+}
+
+#sloganSect {
+    background-color: rgba(252, 233, 246, 0.9);
+    text-align: center;
+    width: 70%;
+}
+
+#photoSect {
+    background-color: rgba(252, 233, 246, 0.7);
+    text-align: center;
+    width: 30%;
+    /*margin: auto;*/
+}
+
+#sosSect {
+    background-color: rgba(134, 19, 98, 0.2);
+    text-align: center;
+    width: 30%;
+
+}
+
+#book {
+    text-align: center;
+}
+
+/*figuring out how to style index*/

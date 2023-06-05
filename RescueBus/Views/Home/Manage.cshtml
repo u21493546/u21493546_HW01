@@ -1,0 +1,130 @@
+﻿@model RescueBus.Models.ViewModel
+<head>
+    <!--bootstrap links-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--font awesome link for logos-->
+    <script src="https://kit.fontawesome.com/77df986381.js" crossorigin="anonymous"></script>
+
+    <!--css styles-->
+    <style>
+        #body {
+            background-color: rgba(247, 237, 244, 0.5);
+        }
+
+        #create {
+            float: right;
+        }
+
+        table {
+            width: 80%;
+            height: 30%;
+        }
+
+        #driver {
+            border-radius: 1px;
+            background-color: rgba(252, 233, 246, 0.7);
+        }
+    </style>
+</head>
+ 
+
+<body>
+    <div id="head">
+        <h2>Driver and Vehicle Management</h2>
+    </div>
+
+    <div id="driver">
+
+        <h4>Drivers</h4>
+        <button type="button" class="btn btn-info" id="create">Create</button><br />
+
+        <form class="form-inline">
+
+            <input type="search" placeholder="Driver Name" form-control mb-2 mr-sm-2 />
+            @Html.DropDownListFor(model => model.SelectedService,
+                new SelectList(Model.Drivers, "service"),
+                "Service",
+                new { @id = "serviceDropdown", @class = "form-control form-select mb-2 mr-sm-2" })
+            <button type="button" class=" btn btn-secondary form-control mb-2 mr-sm-2" id="search">Search</button><br />
+        </form>
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Image</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Phone Number</th>
+                        <th>Service</th>
+                        <th>Controls</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model.Drivers)
+                {
+                    <tr>
+                        <td><img src="@Html.DisplayFor(modelItem => item.image)"></td>
+                        <td>@Html.DisplayFor(modelItem => item.firstName) </td>
+                        <td>@Html.DisplayFor(modelItem => item.lastName) </td>
+                        <td>@Html.DisplayFor(modelItem => item.phoneNumber) </td>
+                        <td>@Html.DisplayFor(modelIem => item.service) </td>
+                        <td>
+                            <button type="button" class="btn btn-warning" id="update">Update</button>
+                            <button type="button" class="btn btn-danger" id="delete">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+    </div>
+
+    <div id="vehicle">
+
+        <h4>Vehicles</h4>
+        <button type="button" class="btn btn-info" id="create">Create</button><br />
+
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th>Image</th>
+                        <th>Type</th>
+                        <th>Registration</th>
+                        <th>Service</th>
+                        <th>Controls</th>
+                    </tr>
+                </thead>
+                @foreach (var item in Model.Vehicles)
+                {
+                    <tr>
+                        <td><img src="@Html.DisplayFor(modelItem => item.image)"></td>
+                        <td>@Html.DisplayFor(modelItem => item.type) </td>
+                        <td>@Html.DisplayFor(modelItem => item.registration) </td>
+                        <td>@Html.DisplayFor(modelIem => item.service) </td>
+                        <td>
+                            <button type="button" class="btn btn-warning" id="update">Update</button>
+                            <button type="button" class="btn btn-danger" id="delete" onclick="deleteRow()">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+
+    </div>
+</body>
+
+<script>
+    //Update button
+    //$(document).on("click", ".btn-warning", function () {
+
+    //})
+
+    //delete button
+     function deleteRow(r) {
+        var i = r.parentNode.parentNode.rowIndex;
+        $(table).deleteRow(i);
+    }
+</script>
+

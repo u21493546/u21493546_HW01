@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--bootstrap links-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--font awesome link for logos-->
+    <script src="https://kit.fontawesome.com/77df986381.js" crossorigin="anonymous"></script>
+    <!--external css file-->
+    <link rel="stylesheet" href="@Url.Content("~/Content/styles.css")"/>
+
+</head>
+
+<body>
+    <div class="container-fluid container-sm" id="cont1">
+        <!--grid section 1-->
+        <div class="row" id="sect1">
+            <!--book ambulance section-->
+                <div class="col-sm-8" id="bookSect">
+                    <!--random info-->
+                    <div style=" position: relative; margin: auto; top: 25%; bottom: 50%;">
+                        <h3 id="heading">Don't want to die? You're in the right place</h3>
+                        <p>If you're going to the hospital, might as well go in style. We can't gaurentee you will survive but atleast the ambulance is cute :)</p>
+                        <a href="@Url.Content("~/Home/SelectService")" id="book"><button type="button" class="btn btn-outline-secondary">BOOK AMBULANCE</button></a>
+                    </div>
+                </div>
+
+            <!--stock photo section-->
+                <div class="col-sm-4" id="photoSect">
+                    <div style="position: relative; margin:auto; top: 25%; bottom: 50%">
+                        <h5>Concept art for our new model!</h5>
+                        <img src="pinkAmbulance.jpg" class="img-fluid" alt="PinkAmb_GGG5494" />
+                    </div>
+                </div>
+        </div>
+    </div>
+
+    <div class="container-fluid container-sm" id="cont2">
+        <!--grid section 2-->
+        <div class="row" id="sect2">
+            <!--slogan section-->
+            <div class="col-sm-4" id="sloganSect">
+                <div style="position: relative; margin:auto; top: 25%;">
+                    <h4>Thinking of getting a free ride?</h4>
+                    <p>If we can establish that our services are being abused we will charge a fee of R98734567 per minute. This includes paper cuts, pregnancy, blunt force trauma and death.</p>
+                </div>
+            </div>
+
+            <!--sos section-->
+            <div class="col-sm-8" id="sosSect">
+                <div style="position: relative; margin:auto; top: 50%;">
+                    <a href="@Url.Content("~/Home/BookingConfirmed")"><i class="fa-regular fa-circle-dot fa-beat fa-xl" style="color: #d21919;"></i></a>
+                </div>  </div>
+        </div>
+    </div>
+
+    <!--JS script-->
+    <script>
+        @*/* event listener for button click */
+        document.getElementById("book").addEventListener("click", openBook);
+        /* tried arrow function but this a function */
+         openBook => window.location = @Url.Content("~/Home/SelectService");*@
+
+
+    </script>
+</body>
+
+
+</html>

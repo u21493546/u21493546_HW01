@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <!--bootstrap links-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!--font awesome link for logos-->
+    <script src="https://kit.fontawesome.com/77df986381.js" crossorigin="anonymous"></script>
+    <!--external css file-->
+    <link rel="stylesheet" href="@Url.Content("~/Content/styles.css")" />
+</head>
+
+<body>
+    <!--heading section-->
+    <div id="headings">
+        <h2>Select a service</h2>
+        <p>Here you can place requests for any and all service that you made, we offer a rage of six different options which are explained below.</p>
+    </div>
+
+    <!--cards sections, used alongside grid to display different options-->
+    <div class="container" id="cardSect">
+        <div class="row">
+
+            <!--card 1-->
+            <div class="col-sm-4 card">
+                <img class="card-img-top" src="~/Views/Home/Photos/ALS.jpg" alt="ALS" />
+                <div class="card-body">
+                    <h4 class="card-title"> ALS (Advanced Lift Support)</h4>
+                    <p>ALS ambulance is staffed by a paramedic and is used to transport patients who require high level care</p>
+                    <a class="card-text stretched-link" href="@Url.Content("~/Home/Booking")"></a>
+                </div>
+            </div>
+
+            <!--card 2-->
+            <div class="col-sm-4 card">
+                <img class="card-img-top" src="~/Views/Home/Photos/BLS.png" alt="BLS" />
+                <div class="card-body">
+                    <h4 class="card-title"> BLS (Basic Lift Support)</h4>
+                    <p>BLS ambulance provides transport to patients who are in a non life threatening condition</p>
+                    <a class="card-text stretched-link" href="@Url.Content("~/Home/Booking")"></a>
+                </div>
+            </div>
+
+            <!--card 3-->
+            <div class="col-sm-4 card">
+                <img class="card-img-top" src="~/Views/Home/Photos/patientTransport.jpg" alt="PT" />
+                <div class="card-body">
+                    <h4 class="card-title"> Patient Transport</h4>
+                    <p>The most basic type of transport for patients requiring ambulatory support to and from the hospital</p>
+                    <a class="card-text stretched-link" href="@Url.Content("~/Home/Booking")"></a>
+                </div>
+            </div>
+
+            <!--card 4-->
+            <div class="col-sm-4 card">
+                <img class="card-img-top" src="~/Views/Home/Photos/medicalUtility.jpg" alt="MU" />
+                <div class="card-body">
+                    <h4 class="card-title"> Medical Utility Vehicle</h4>
+                    <p>A state of the art small or large van that is designed to facillitate the movement ad transport of patients</p>
+                    <a class="card-text stretched-link" href="@Url.Content("~/Home/Booking")"></a>
+                </div>
+            </div>
+
+            <!--card 5-->
+            <div class="col-sm-4 card">
+                <img class="card-img-top" src="~/Views/Home/Photos/eventAmbulance.jpeg" alt="PT" />
+                <div class="card-body">
+                    <h4 class="card-title"> Event Medical Ambulance</h4>
+                    <p>Ambulance that are stationed at events, such as concerts, sports games, and festivals, to provide medical assistance</p>
+                    <a class="card-text stretched-link" href="@Url.Content("~/Home/Booking")"></a>
+                </div>
+            </div>
+
+     
+            <!--card 6-->
+            <div class="col-sm-4 card">
+                <img class="card-img-top" src="~/Views/Home/Photos/airAmbulance.jpg" alt="PT" />
+                <div class="card-body">
+                    <h4 class="card-title"> Air ambulance</h4>
+                    <p>Air ambulance help in the transfer of patients actoss long distance in both emergancy and non-emergency situation</p>
+                    <a class="card-text stretched-link" href="@Url.Content("~/Home/Booking")"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
